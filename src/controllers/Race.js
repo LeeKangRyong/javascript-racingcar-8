@@ -3,16 +3,26 @@ import { RacingLogics } from "../models/RacingLogics.js";
 
 const Race = {  
     async run() {
-        const query = await Input.readQuery();
-        const cnt = await Input.readCount();
+        try {
+            const query = await Input.readQuery();
+            let arr = RacingLogics.splitNames(query);
 
-        let arr = RacingLogics.splitNames(query);
-        arr = RacingLogics.makeCount(arr);
+            const cnt = await Input.readCount();
 
-        Output.printSpace();
-        for (let i = 0; i < cnt; i++) {
-            arr = RacingLogics.dash(arr);
-            Output.printDashResult(arr);
+            arr = RacingLogics.makeCount(arr);
+
+            Output.printSpace();
+            for (let i = 0; i < cnt; i++) {
+                arr = RacingLogics.dash(arr);
+                Output.printDashResult(arr);
+            }
+
+            const winners = RacingLogics.winnerNames(arr);
+
+            Output.printSpace();
+            Output.printResult(winners);
+        } catch (e) {
+                throw Output.printError(e);
         }
     }
 }

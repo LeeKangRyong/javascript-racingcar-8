@@ -6,4 +6,8 @@ const isOver5Letters = (str) => {
     return str.length > 5;
 }
 
-export { isOver5LettersExists, isOver5Letters };
+const isOver2People = (arr) => {
+    return arr.length >= 2;
+}
+
+export { isOver5LettersExists, isOver5Letters, isOver2People };

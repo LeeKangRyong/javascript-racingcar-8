@@ -1,5 +1,6 @@
 const SEPARATOR = {
-    'COMMA': ','
+    'COMMA': ',',
+    'WINNER_COMMA': ', '
 }
 
 const MODEL_ERROR = {

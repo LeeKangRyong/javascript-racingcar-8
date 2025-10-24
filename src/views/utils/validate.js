@@ -7,4 +7,8 @@ const isIntegerNum = (num) => {
     return /^[0-9]+$/.test(trimmedNum);
 }
 
-export { isEmpty, isIntegerNum };
+const isOver2People = (arr) => {
+    return arr.length > 1;
+}
+
+export { isEmpty, isIntegerNum, isOver2People };

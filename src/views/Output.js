@@ -5,7 +5,7 @@ const Output = {
     printSpace() {
         Console.print(RESULT.SPACE);
     },
-    
+
     printDashResultHeader() {
         this.printSpace();
         Console.print(RESULT.RACE);
@@ -17,6 +17,16 @@ const Output = {
             Console.print(`${car[0]} : ${dashDistance}`);
         }
         this.printSpace();
+    },
+
+    printResult(names) {
+        Console.print(`최종 우승자 : ${names}`);
+    },
+
+    printError(error) {
+        const errorMessage = `[ERROR] ${error.message}`;
+        Console.print(errorMessage);
+        return new Error(errorMessage);
     }
 }
 
