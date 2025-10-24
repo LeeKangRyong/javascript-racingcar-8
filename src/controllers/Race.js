@@ -11,7 +11,7 @@ const Race = {
 
             arr = RacingLogics.makeCount(arr);
 
-            Output.printSpace();
+            Output.printDashResultHeader();
             for (let i = 0; i < cnt; i++) {
                 arr = RacingLogics.dash(arr);
                 Output.printDashResult(arr);
@@ -19,7 +19,6 @@ const Race = {
 
             const winners = RacingLogics.winnerNames(arr);
 
-            Output.printSpace();
             Output.printResult(winners);
         } catch (e) {
                 throw Output.printError(e);
