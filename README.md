@@ -1,6 +1,6 @@
 # 프리코스 2주차: 자동차 경주
 ## 구현 기능 정리
-<img src="./images//flowchart_2w.png" width="60%">
+<img src="./images//flowchart_2w.png">
 
 <br>
 
@@ -102,3 +102,5 @@ ____________________________
 - [1주차 피드백 내용]()
 
 - [Jest 사용법]()
+
+- [FSD principles]()
