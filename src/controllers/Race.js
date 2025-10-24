@@ -4,9 +4,10 @@ import { RacingLogics } from "../models/RacingLogics.js";
 const Race = {  
     async run() {
         const query = await Input.readQuery();
-        const arr = RacingLogics.splitNames(query);
-
         const cnt = await Input.readCount();
+
+        let arr = RacingLogics.splitNames(query);
+        arr = RacingLogics.makeCount(arr);
     }
 }
 
