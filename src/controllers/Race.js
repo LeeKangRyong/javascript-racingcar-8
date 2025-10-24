@@ -5,7 +5,8 @@ const Race = {
     async run() {
         const query = await Input.readQuery();
         const arr = RacingLogics.splitNames(query);
-        console.log(arr);
+
+        const cnt = await Input.readCount();
     }
 }
 
