@@ -2,6 +2,8 @@
 ## 구현 기능 정리
 <img src="./images//flowchart_2w.png" width="60%">
 
+<br>
+
 - [ ] 1. **참가자 입력 받기**
     - [ ] 이름 입력 받기 `Console.readLineAsync(query)`
     - [ ] 입력값 검증 (빈 문자열?)
@@ -42,15 +44,31 @@
     - [ ] 우승자 문자열 만들기
     - [ ] 우승자 출력 `Console.print(message)`
 
-<br>
-    
+<br />
+
 
 ## 프로그래밍 요구 사항
 
 <br />
 
-## 아키텍처
+## 아키텍처 - MVC + FSD 원칙 참고
 ```
+|- controllers/
+|      |- Race.js
+|
+|- models/
+|   |- RacingLogics.js
+|   |- utils/
+|       |- validate.js
+|       |- constants.js
+|
+|- views/
+|    |- Input.js
+|    |- Output.js
+|    |- utils/
+|         |- validate.js
+|         |- constants.js
+____________________________
 ```
 
 <br />
