@@ -25,10 +25,10 @@
 
 <br>
 
-- [ ] 4. **각각 전진하기 (3회 반복)**
-    - [ ] 각 사용자마다 값 뽑기 `Random.pickNumberInRange(0. 9)`
-    - [ ] 각각 4이상이면 전진횟수`++`
-    - [ ] N회 전진 후, 결과 출력 `Console.print(message)`
+- [ ] 4. **각각 전진하기 (`count`회 반복)**
+    - [x] 각 사용자마다 값 뽑기 `Random.pickNumberInRange(0. 9)`
+    - [x] 각각 4이상이면 전진횟수`++`
+    - [x] `count`회 전진 후, 결과 출력 `Console.print(message)`
 
 <br>
 

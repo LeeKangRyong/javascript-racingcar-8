@@ -8,4 +8,10 @@ const QUESTION = {
     'COUNT': '시도할 횟수는 몇 회인가요?\n'
 }
 
-export { VIEW_ERROR, QUESTION };
+const RESULT = {
+    'SPACE': '',
+    'RACE': '실행 결과',
+    'CAR': '-'
+}
+
+export { VIEW_ERROR, QUESTION, RESULT };

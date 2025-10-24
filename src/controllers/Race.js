@@ -1,4 +1,4 @@
-import { Input } from "../views/index.js";
+import { Input, Output } from "../views/index.js";
 import { RacingLogics } from "../models/RacingLogics.js";
 
 const Race = {  
@@ -8,6 +8,12 @@ const Race = {
 
         let arr = RacingLogics.splitNames(query);
         arr = RacingLogics.makeCount(arr);
+
+        Output.printSpace();
+        for (let i = 0; i < cnt; i++) {
+            arr = RacingLogics.dash(arr);
+            Output.printDashResult(arr);
+        }
     }
 }
 
