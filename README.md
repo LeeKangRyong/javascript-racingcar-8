@@ -4,10 +4,10 @@
 
 <br>
 
-- [ ] 1. **참가자 입력 받기**
-    - [ ] 이름 입력 받기 `Console.readLineAsync(query)`
-    - [ ] 입력값 검증 (빈 문자열?)
-    - [ ] return **입력값** 
+- [x] 1. **참가자 입력 받기**
+    - [x] 이름 입력 받기 `Console.readLineAsync(query)`
+    - [x] 입력값 검증 (빈 문자열?)
+    - [x] return **입력값** 
 
 <br>
 

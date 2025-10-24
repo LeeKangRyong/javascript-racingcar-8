@@ -1,2 +1,2 @@
-export { Input } from './Input';
-export { Output } from './Output';
+export { Input } from './Input.js';
+export { Output } from './Output.js';
