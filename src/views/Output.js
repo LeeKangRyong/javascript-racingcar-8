@@ -11,16 +11,16 @@ const Output = {
         Console.print(RESULT.RACE);
     },
     
-    printDashResult(list) {
-        for (let car of list) {
-            let dashDistance = RESULT.CAR.repeat(car.dashCount);
-            Console.print(`${car.name} : ${dashDistance}`);
+    printDashResult(carList) {
+        for (let carObj of carList) {
+            let dashDistance = RESULT.CAR.repeat(carObj.dashCount);
+            Console.print(`${carObj.name} : ${dashDistance}`);
         }
         this.printSpace();
     },
 
-    printResult(names) {
-        Console.print(`최종 우승자 : ${names}`);
+    printResult(winners) {
+        Console.print(`최종 우승자 : ${winners}`);
     },
 
     printError(error) {
