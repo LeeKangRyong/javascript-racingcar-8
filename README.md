@@ -75,7 +75,7 @@ ____________________________
 
 ## 테스트
 
-**[CUSTOM ERROR]**  
+### 에러 종류
 - 입력받은 이름 문자열이 빈 문자열이면  
 `[ERROR] No names input`
 
@@ -89,6 +89,93 @@ ____________________________
 - 입력받은 시도횟수가 숫자가 아니면  
 `[ERROR] Non-number counts`
 
+### E2E 테스트
+- **기능 테스트 1 : 우승자 1명**
+```    
+- 이름 : pobi, edy, krong, rupi
+- 시도횟수 : 1
+- 랜덤 값 : 4, 3, 2, 1
+- 결과 : "pobi: -", "edy: ", "krong: ", "rupi: "
+- 최종 결과 : "최종 우승자 : pobi"
+```
+
+<br>
+
+- **기능 테스트 2 : 우승자 3명**
+```    
+- 이름 : pobi, edy, krong, rupi
+- 시도횟수 : 1
+- 랜덤 값 : 6, 4, 5, 1
+- 결과 : "pobi: -", "edy: -", "krong: -", "rupi: "
+- 최종 결과 : "최종 우승자 : pobi, edy, krong"
+```
+
+<br>
+
+- **기능 테스트 3 : 우승자 1명 && 시도횟수 3회**
+```    
+- 이름 : pobi, edy, krong, rupi
+- 시도횟수 : 3
+- 랜덤 값
+    -------------
+    pobi(4, 4, 4)
+    edy(2, 2, 3)
+    krong(1, 1, 1)
+    rupi(1, 1, 1)
+    -------------
+- 결과 : "pobi: ---", "edy: ", "krong: ", "rupi: "
+- 최종 결과 : "최종 우승자 : pobi"
+```
+
+<br>
+
+- **기능 테스트 4 : 우승자 2명 && 시도횟수 3회**
+```    
+- 이름 : pobi, edy, krong, rupi
+- 시도횟수 : 3
+- 랜덤 값
+    -------------
+    pobi(8, 7, 2)
+    edy(5, 2, 9)
+    krong(3, 6, 1)
+    rupi(1, 1, 3)
+    -------------
+- 결과 : "pobi: --", "edy: --", "krong: -", "rupi: "
+- 최종 결과 : "최종 우승자 : pobi, edy"
+```
+
+<br>
+
+---
+**예외 테스트 조건**
+
+1. `[ERROR]`로 시작
+2. `[ERROR]` 뒤에 정확한 에러 종류 호출
+---
+
+- **예외 테스트 1 : 아무 이름도 입력하지 않았을 시**
+```
+- Input : ""(그냥 Enter)
+- Output : [ERROR] No names input
+```
+
+<br>
+
+- **예외 테스트 2 : 5글자 초과하는 이름 발생 시**
+```
+- Input : pobi,javaji
+- Output : [ERROR] More than 5-letter name exists
+
+```
+
+<br>
+
+- **예외 테스트 3 : 시도횟수가 양의 정수가 아닐 시**
+```
+- Input : "wrongNumber"
+- Output : [ERROR] Non-number counts
+```
+
 <br />
 
 ## 참고자료
@@ -101,6 +188,6 @@ ____________________________
 - [Commit Messages](https://quirky-streetcar-a17.notion.site/Commit-message-295523184d3c80d9a241fc93c59ebce5)
 - [1주차 피드백 내용]()
 
-- [Jest 사용법]()
+- [Jest 사용법](https://quirky-streetcar-a17.notion.site/Testing-Jest-297523184d3c807a9402f1f518f31abd)
 
 - [FSD principles]()
