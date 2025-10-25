@@ -11,10 +11,10 @@ const Output = {
         Console.print(RESULT.RACE);
     },
     
-    printDashResult(arr) {
-        for (let car of arr) {
-            let dashDistance = RESULT.CAR.repeat(car[1]);
-            Console.print(`${car[0]} : ${dashDistance}`);
+    printDashResult(list) {
+        for (let car of list) {
+            let dashDistance = RESULT.CAR.repeat(car.dashCount);
+            Console.print(`${car.name} : ${dashDistance}`);
         }
         this.printSpace();
     },

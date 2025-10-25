@@ -3,33 +3,41 @@ import { SEPARATOR, MODEL_ERROR } from "./utils/constants.js";
 import { isOver2People, isOver5LettersExists } from "./utils/validate.js";
 
 const RacingLogics = {
-    splitNames(str) {
-        const names = str.split(SEPARATOR.COMMA);
+    splitNames(carNames) {
+        const names = carNames.split(SEPARATOR.COMMA);
         if(isOver5LettersExists(names)) throw new Error(MODEL_ERROR.OVER);
 
         return names;
     },
 
-    makeCount(arr) {
-        return arr.map(v => [v, 0]);
+    makeCount(carList) {
+        const newCarList = [];
+        for (let carName of carList) {
+            let carObj = new Object();
+            carObj.name = carName;
+            carObj.dashCount = 0;
+
+            newCarList.push(carObj);
+        }
+        return newCarList;
     },
 
-    dash(arr) {
-        for (let str of arr) {
+    dash(carList) {
+        for (let carObj of carList) {
             let dashNum = Random.pickNumberInRange(0, 9);
-            dashNum >=4 ? str[1]++ : str[1];
+            dashNum >=4 ? carObj.dashCount++ : null;
         }
 
-        return arr;
+        return carList;
     },
 
-    winnerNames(arr) {
-        const counts = arr.map(v => v[1]);
+    winnerNames(carList) {
+        const counts = carList.map(v => v.dashCount);
 
         const winnerCount = Math.max(...counts);
-        const winner = arr.filter(v => v[1] === winnerCount);
+        const winner = carList.filter(v => v.dashCount === winnerCount);
 
-        const names = winner.map(v => v[0]);
+        const names = winner.map(v => v.name);
 
         const winners = isOver2People(names) ? names.join(SEPARATOR.WINNER_COMMA) : names[0];
     
