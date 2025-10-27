@@ -27,7 +27,7 @@
 
 - [x] 4. **시도 횟수 입력 받기**
     - [x] 각 이름에 count=0 초기화해놓기
-    - [x] 입력값 검증 (!isIntegerNum?)
+    - [x] 입력값 검증 (양의 정수?)
     - [x] return 시도 횟수
 
 <br>
@@ -110,8 +110,8 @@ ____________________________
 
 <br>
 
-- 입력받은 시도횟수가 숫자가 아니면  
-`[ERROR] Non-integer-number counts`
+- 입력받은 시도횟수가 양의 정수가 아니면  
+`[ERROR] Non-positive-integer number counts`
 
 <br>
 
