@@ -145,6 +145,6 @@ describe("E2E 테스트", () => {
     const app = new App();
 
     // then
-    expect(app.run()).rejects.toThrow(errorMessage(VIEW_ERROR.NON_INTGER_NUMBER));
+    expect(app.run()).rejects.toThrow(errorMessage(VIEW_ERROR.NON_INTEGER_NUMBER));
   })
 });

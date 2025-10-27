@@ -1,5 +1,6 @@
 import { Input, Output } from "../views/index.js";
 import { RacingLogics } from "../models/RacingLogics.js";
+import { RacingServices } from "../services/RacingServices.js";
 
 const Race = {  
     async run() {
@@ -12,16 +13,14 @@ const Race = {
             carList = RacingLogics.makeCount(carList);
 
             Output.printDashResultHeader();
-            for (let i = 0; i < dashCounts; i++) {
-                carList = RacingLogics.dash(carList);
-                Output.printDashResult(carList);
-            }
+            carList = RacingServices.dashAll(carList, dashCounts);
 
-            const winners = RacingLogics.winnerNames(carList);
+            const winners = RacingLogics.getWinnerNames(carList);
 
             Output.printResult(winners);
         } catch (e) {
-                throw Output.printError(e);
+            Output.printError(e);
+            throw e;
         }
     }
 }

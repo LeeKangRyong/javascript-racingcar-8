@@ -1,5 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
 import { RESULT } from "./utils/constants.js";
+import { ERROR_PREFIX } from "../shared/utils/constants.js";
 
 const Output = {
     printSpace() {
@@ -22,11 +23,15 @@ const Output = {
     printResult(winners) {
         Console.print(`최종 우승자 : ${winners}`);
     },
-
+    
     printError(error) {
-        const errorMessage = `[ERROR] ${error.message}`;
+        let errorMessage = error.message;
+
+        if (!errorMessage.startsWith(ERROR_PREFIX)) {
+            errorMessage = `${ERROR_PREFIX} ${errorMessage}`;
+        }
+
         Console.print(errorMessage);
-        return new Error(errorMessage);
     }
 }
 

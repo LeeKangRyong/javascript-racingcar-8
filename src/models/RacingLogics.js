@@ -1,24 +1,22 @@
 import { Random } from "@woowacourse/mission-utils";
 import { SEPARATOR, MODEL_ERROR } from "./utils/constants.js";
 import { isOver2People, isOver5LettersExists } from "./utils/validate.js";
+import { WoowaError } from "../shared/utils/WoowaError.js";
 
 const RacingLogics = {
     splitNames(carNames) {
         const names = carNames.split(SEPARATOR.COMMA);
-        if(isOver5LettersExists(names)) throw new Error(MODEL_ERROR.OVER);
+        if(isOver5LettersExists(names)) throw new WoowaError(MODEL_ERROR.OVER);
 
         return names;
     },
 
     makeCount(carList) {
-        const newCarList = [];
-        for (let carName of carList) {
-            let carObj = new Object();
-            carObj.name = carName;
-            carObj.dashCount = 0;
+        const newCarList = carList.map(carName => ({
+            name: carName,
+            dashCount: 0
+        }));
 
-            newCarList.push(carObj);
-        }
         return newCarList;
     },
 
@@ -31,17 +29,25 @@ const RacingLogics = {
         return carList;
     },
 
-    winnerNames(carList) {
-        const counts = carList.map(v => v.dashCount);
+    findWinners(carList) {
+        const maxCount = this.getMaxDashCount(carList);
+        return carList.filter(carObj => carObj.dashCount === maxCount);
+    },
 
-        const winnerCount = Math.max(...counts);
-        const winner = carList.filter(v => v.dashCount === winnerCount);
+    getMaxDashCount(carList) {
+        const counts = carList.map(carObj => carObj.dashCount);
+        return Math.max(...counts);
+    },
 
-        const names = winner.map(v => v.name);
-
+    formatWinnerNames(winners) {
+        const names = winners.map(carObj => carObj.name);
         if (isOver2People(names)) return names.join(SEPARATOR.WINNER_COMMA);
-    
-        return names[0];    
+        return names[0];
+    },
+
+    getWinnerNames(carList) {
+        const winners = this.findWinners(carList);
+        return this.formatWinnerNames(winners);
     }
 }
 
