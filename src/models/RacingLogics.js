@@ -1,6 +1,6 @@
 import { Random } from "@woowacourse/mission-utils";
 import { SEPARATOR, MODEL_ERROR } from "./utils/constants.js";
-import { isOver2People, isOver5LettersExists } from "./utils/validate.js";
+import { isOver2People, isOver5LettersExists, isEmptyNameExists, isSameNameExists } from "./utils/validate.js";
 import { WoowaError } from "../shared/utils/WoowaError.js";
 
 const RacingLogics = {
@@ -9,6 +9,14 @@ const RacingLogics = {
         if(isOver5LettersExists(names)) throw new WoowaError(MODEL_ERROR.OVER);
 
         return names;
+    },
+
+    validateNames(carLlst) {
+        if(isOver5LettersExists(carLlst)) throw new WoowaError(MODEL_ERROR.OVER);
+        if(isEmptyNameExists(carLlst)) throw new WoowaError(MODEL_ERROR.EMPTY_NAME);
+        if(isSameNameExists(carLlst)) throw new WoowaError(MODEL_ERROR.SAME_NAME);
+
+        return carLlst;
     },
 
     makeCount(carList) {

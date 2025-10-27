@@ -7,6 +7,7 @@ const Race = {
         try {
             const carNames = await Input.readQuery();
             let carList = RacingLogics.splitNames(carNames);
+            carList = RacingLogics.validateNames(carList);
 
             const dashCounts = await Input.readCount();
 
