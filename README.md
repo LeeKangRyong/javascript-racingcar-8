@@ -49,6 +49,15 @@
 
 ## 프로그래밍 요구 사항
 
+- `indent depth` < 3
+
+- 3항 연산자 사용 **X**
+
+- 함수(method)가 한 가지 일만 하도록 최대한 작게!
+
+- `Jest`로 정리한 기능 목록이 정상적으로 작동하는 지 확인!
+
+
 <br />
 
 ## 아키텍처 - MVC + FSD 원칙 참고
@@ -181,13 +190,9 @@ ____________________________
 ## 참고자료
 - [라이브러리 분석 결과](https://quirky-streetcar-a17.notion.site/mission-utils-28c523184d3c80d8904fe0870e5e4181?pvs=74)
 
-- [JS Style Guide]()
-
 - [Git Commands](https://quirky-streetcar-a17.notion.site/Git-Commands-295523184d3c80babea4d5f7cd4daff8)
 
 - [Commit Messages](https://quirky-streetcar-a17.notion.site/Commit-message-295523184d3c80d9a241fc93c59ebce5)
-- [1주차 피드백 내용]()
+- [1주차 피드백 내용](https://velog.io/@gaiogo2/FE-8%EA%B8%B0-%ED%94%84%EB%A6%AC%EC%BD%94%EC%8A%A4-1%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0%EB%A1%9D)
 
 - [Jest 사용법](https://quirky-streetcar-a17.notion.site/Testing-Jest-297523184d3c807a9402f1f518f31abd)
-
-- [FSD principles]()
