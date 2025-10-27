@@ -137,8 +137,8 @@ describe("E2E 테스트", () => {
 
   test("예외 테스트 3 : 시도횟수가 양의 정수가 아닐 시", async () => {
     // given
-    const counts = 'wrongNumber';
-    const inputs = ["pobi,woni", counts];
+    const counts = "wrongNumber";
+    const inputs = ["pobi,edy", counts];
     mockQuestions(inputs);
 
     // when
@@ -146,5 +146,29 @@ describe("E2E 테스트", () => {
 
     // then
     expect(app.run()).rejects.toThrow(errorMessage(VIEW_ERROR.NON_INTEGER_NUMBER));
-  })
+  });
+
+  test("예외 테스트 4 : 비어있는 이름이 있을 시", async () => {
+    // given
+    const inputs = ["pobi,edy,"];
+    mockQuestions(inputs);
+
+    // when
+    const app = new App();
+
+    // then
+    expect(app.run()).rejects.toThrow(errorMessage(MODEL_ERROR.EMPTY_NAME));
+  });
+
+  test("예외 테스트 5 : 같은 이름이 있을 시", async () => {
+    // given
+    const inputs = ["pobi,pobi"];
+    mockQuestions(inputs);
+
+    // when
+    const app = new App();
+
+    // then
+    expect(app.run()).rejects.toThrow(errorMessage(MODEL_ERROR.SAME_NAME));
+  });
 });

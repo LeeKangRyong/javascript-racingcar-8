@@ -6,17 +6,16 @@ import { WoowaError } from "../shared/utils/WoowaError.js";
 const RacingLogics = {
     splitNames(carNames) {
         const names = carNames.split(SEPARATOR.COMMA);
-        if(isOver5LettersExists(names)) throw new WoowaError(MODEL_ERROR.OVER);
 
         return names;
     },
 
-    validateNames(carLlst) {
-        if(isOver5LettersExists(carLlst)) throw new WoowaError(MODEL_ERROR.OVER);
-        if(isEmptyNameExists(carLlst)) throw new WoowaError(MODEL_ERROR.EMPTY_NAME);
-        if(isSameNameExists(carLlst)) throw new WoowaError(MODEL_ERROR.SAME_NAME);
+    validateNames(carList) {
+        if(isOver5LettersExists(carList)) throw new WoowaError(MODEL_ERROR.OVER);
+        if(isEmptyNameExists(carList)) throw new WoowaError(MODEL_ERROR.EMPTY_NAME);
+        if(isSameNameExists(carList)) throw new WoowaError(MODEL_ERROR.SAME_NAME);
 
-        return carLlst;
+        return carList;
     },
 
     makeCount(carList) {
