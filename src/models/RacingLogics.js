@@ -25,7 +25,7 @@ const RacingLogics = {
     dash(carList) {
         for (let carObj of carList) {
             let dashNum = Random.pickNumberInRange(0, 9);
-            dashNum >=4 ? carObj.dashCount++ : null;
+            if (dashNum >= 4) carObj.dashCount++;
         }
 
         return carList;
@@ -39,9 +39,9 @@ const RacingLogics = {
 
         const names = winner.map(v => v.name);
 
-        const winners = isOver2People(names) ? names.join(SEPARATOR.WINNER_COMMA) : names[0];
+        if (isOver2People(names)) return names.join(SEPARATOR.WINNER_COMMA);
     
-        return winners;
+        return names[0];    
     }
 }
 
