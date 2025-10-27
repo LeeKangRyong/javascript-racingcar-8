@@ -1,6 +1,6 @@
 const VIEW_ERROR = {
     'EMPTY': 'No names input',
-    'NON_INTEGER_NUMBER': 'Non-integer-number counts'
+    'NON_POSITIVE_INTEGER_NUMBER': 'Non-positive-integer number counts'
 }
 
 const QUESTION = {

@@ -145,7 +145,7 @@ describe("E2E 테스트", () => {
     const app = new App();
 
     // then
-    expect(app.run()).rejects.toThrow(errorMessage(VIEW_ERROR.NON_INTEGER_NUMBER));
+    expect(app.run()).rejects.toThrow(errorMessage(VIEW_ERROR.NON_POSITIVE_INTEGER_NUMBER));
   });
 
   test("예외 테스트 4 : 비어있는 이름이 있을 시", async () => {
