@@ -106,6 +106,17 @@ ____________________________
 - 입력받은 시도횟수가 숫자가 아니면  
 `[ERROR] Non-integer-number counts`
 
+<br>
+
+- 빈 이름이 있으면  
+`[ERROR] Empty name exists
+
+<br>
+
+- 같은 이름이 있으면  
+`[ERROR] Same name exists`
+
+
 ### E2E 테스트
 - **기능 테스트 1 : 우승자 1명**
 ```    
@@ -193,6 +204,22 @@ ____________________________
 - Output : [ERROR] Non-integer-number counts
 ```
 
+<br>
+
+- **예외 테스트 4 : 비어있는 이름이 있을 시**
+```
+- Input : "pobi,edy,"
+- Output : [ERROR] Empty name exists
+```
+
+<br>
+
+- **예외 테스트 5 : 같은 이름이 있을 시**
+```
+- Input : "pobi,pobi"
+- Output : [ERROR] Same name exists
+```
+
 <br />
 
 ## 참고자료
@@ -201,6 +228,7 @@ ____________________________
 - [Git Commands](https://quirky-streetcar-a17.notion.site/Git-Commands-295523184d3c80babea4d5f7cd4daff8)
 
 - [Commit Messages](https://quirky-streetcar-a17.notion.site/Commit-message-295523184d3c80d9a241fc93c59ebce5)
+
 - [1주차 피드백 내용](https://velog.io/@gaiogo2/FE-8%EA%B8%B0-%ED%94%84%EB%A6%AC%EC%BD%94%EC%8A%A4-1%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0%EB%A1%9D)
 
 - [Jest 사용법](https://quirky-streetcar-a17.notion.site/Testing-Jest-297523184d3c807a9402f1f518f31abd)
