@@ -109,7 +109,7 @@ ____________________________
 <br>
 
 - 빈 이름이 있으면  
-`[ERROR] Empty name exists
+`[ERROR] Empty name exists`
 
 <br>
 
