@@ -123,6 +123,10 @@ ____________________________
 - 같은 이름이 있으면  
 `[ERROR] Same name exists`
 
+### 에러 Class
+
+`WoowaError` : 일반 에러 (`ReferenceError`, `SyntaxError` 등) 에도 `[ERROR]`가 붙도록 함
+
 
 ### E2E 테스트
 - **기능 테스트 1 : 우승자 1명**
