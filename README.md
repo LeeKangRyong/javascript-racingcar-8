@@ -60,10 +60,13 @@
 
 <br />
 
-## 아키텍처 - MVC + FSD 원칙 참고
+## 아키텍처 - MVC + FSD
 ```
 |- controllers/
 |      |- Race.js
+|
+|- services/
+|      |- RacingServices.js
 |
 |- models/
 |   |- RacingLogics.js
@@ -77,6 +80,11 @@
 |    |- utils/
 |         |- validate.js
 |         |- constants.js
+|
+|- shared/
+|    |- utils/
+|    |    |- constants.js
+|    |    |- WoowaError.js   
 ____________________________
 ```
 
@@ -96,7 +104,7 @@ ____________________________
 <br>
 
 - 입력받은 시도횟수가 숫자가 아니면  
-`[ERROR] Non-number counts`
+`[ERROR] Non-integer-number counts`
 
 ### E2E 테스트
 - **기능 테스트 1 : 우승자 1명**
@@ -182,7 +190,7 @@ ____________________________
 - **예외 테스트 3 : 시도횟수가 양의 정수가 아닐 시**
 ```
 - Input : "wrongNumber"
-- Output : [ERROR] Non-number counts
+- Output : [ERROR] Non-integer-number counts
 ```
 
 <br />
